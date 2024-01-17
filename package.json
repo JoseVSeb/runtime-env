@@ -20,11 +20,6 @@
     "lint": "eslint ./src/**/*.{js,jsx,ts,tsx} --quiet --fix",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pnpm lint"
-    }
-  },
   "dependencies": {
     "@optimize-lodash/rollup-plugin": "^4.0.4",
     "cheerio": "1.0.0-rc.12",
