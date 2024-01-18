@@ -3,5 +3,12 @@
   "semi": true,
   "singleQuote": false,
   "trailingComma": "all",
-  "useTabs": false
+  "useTabs": false,
+  "endOfLine": "auto",
+  "overrides": [
+    {
+      "files": [".eslintrc", ".prettierrc"],
+      "options": { "parser": "json" }
+    }
+  ]
 }

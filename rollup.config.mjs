@@ -31,13 +31,7 @@ const rollupOptions = [
           fileURLToPath(new URL(file, import.meta.url)),
         ]),
     ),
-    output: [
-      {
-        dir: "dist",
-        format: "esm",
-        sourcemap: true,
-      },
-    ],
+    output: [{ dir: "dist", format: "esm", sourcemap: true }],
     plugins: [
       del({ targets: "dist/*" }),
       peerDepsExternal(),

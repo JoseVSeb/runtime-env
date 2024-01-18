@@ -3,6 +3,19 @@
   "author": "Jose V Sebastian",
   "version": "0.0.0",
   "license": "MIT",
+  "scripts": {
+    "start": "tsx ./src/cli",
+    "build": "rollup -c",
+    "test": "jest --watch",
+    "lint": "eslint --quiet --fix",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --ignore-unknown --write",
+      "eslint --quiet"
+    ]
+  },
   "bin": "dist/cli.js",
   "main": "dist/react/index.js",
   "typings": "dist/react/index.d.ts",
@@ -12,13 +25,6 @@
   ],
   "engines": {
     "node": ">=20"
-  },
-  "scripts": {
-    "start": "tsx ./src/cli",
-    "build": "rollup -c",
-    "test": "jest --watch",
-    "lint": "eslint ./src/**/*.{js,jsx,ts,tsx} --quiet --fix",
-    "prepare": "husky install"
   },
   "dependencies": {
     "@optimize-lodash/rollup-plugin": "^4.0.4",
@@ -46,6 +52,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
     "prettier": "^3.2.4",
     "rollup": "^4.9.5",
     "rollup-plugin-analyzer": "^4.0.0",
