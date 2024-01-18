@@ -1,8 +1,9 @@
 {
-  "name": "runtime-env",
+  "name": "runtime-env-cli",
   "author": "Jose V Sebastian",
   "version": "0.0.0",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "start": "tsx ./src/cli",
     "build": "rollup -c",
@@ -16,7 +17,9 @@
       "eslint --quiet"
     ]
   },
-  "bin": "dist/cli.js",
+  "bin": {
+    "runtime-env": "bin/runtime-env"
+  },
   "main": "dist/react/index.js",
   "typings": "dist/react/index.d.ts",
   "files": [
