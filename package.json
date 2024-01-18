@@ -1,7 +1,7 @@
 {
   "name": "runtime-env-cli",
   "author": "Jose V Sebastian",
-  "version": "0.0.0",
+  "version": "1.0.0-alpha.1",
   "license": "MIT",
   "scripts": {
     "start": "tsx ./src/cli",
