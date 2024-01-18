@@ -3,10 +3,10 @@
   "author": "Jose V Sebastian",
   "version": "0.0.0",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "start": "tsx ./src/cli",
     "build": "rollup -c",
+    "prepack": "pnpm build",
     "test": "jest --watch",
     "lint": "eslint --quiet --fix",
     "prepare": "husky install"
@@ -30,14 +30,13 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@optimize-lodash/rollup-plugin": "^4.0.4",
     "cheerio": "1.0.0-rc.12",
     "commander": "^11.1.0",
     "glob": "^10.3.10",
-    "lodash": "^4.17.21",
-    "lodash-es": "^4.17.21"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@optimize-lodash/rollup-plugin": "^4.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-eslint": "^9.0.5",
     "@rollup/plugin-node-resolve": "^15.2.3",
