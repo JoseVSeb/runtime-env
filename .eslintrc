@@ -4,7 +4,6 @@
     "plugin:prettier/recommended"
   ],
   "plugins": ["@typescript-eslint"],
-  "ignorePatterns": ["pnpm-lock.yaml"],
   "rules": {
     "prefer-const": "error",
     "no-unused-vars": "off",

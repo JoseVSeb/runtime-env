@@ -1,0 +1,8 @@
+*.yaml
+*.txt
+*.png
+*.sh
+*.html
+*.ico
+Dockerfile
+*.json

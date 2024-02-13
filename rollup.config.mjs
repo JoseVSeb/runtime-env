@@ -10,7 +10,6 @@ import analyze from "rollup-plugin-analyzer";
 import del from "rollup-plugin-delete";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import versionInjector from "rollup-plugin-version-injector";
-import { visualizer } from "rollup-plugin-visualizer";
 import { optimizeLodashImports } from "@optimize-lodash/rollup-plugin";
 import shebang from "rollup-plugin-preserve-shebang";
 
@@ -37,7 +36,6 @@ const rollupOptions = [
         limit: 0,
         summaryOnly: true,
       }),
-      visualizer(),
     ],
   },
   {
@@ -70,7 +68,6 @@ const rollupOptions = [
         limit: 0,
         summaryOnly: true,
       }),
-      visualizer(),
     ],
   },
 ];
