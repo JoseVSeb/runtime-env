@@ -22,8 +22,8 @@ const config = {
       },
     ],
     ["@semantic-release/npm", { tarballDir: "pack" }],
-    "@semantic-release/git",
     ["@semantic-release/github", { assets: "pack/*.tgz" }],
+    "@semantic-release/git",
   ],
 };
 

@@ -12,22 +12,43 @@ import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import versionInjector from "rollup-plugin-version-injector";
 import { visualizer } from "rollup-plugin-visualizer";
 import { optimizeLodashImports } from "@optimize-lodash/rollup-plugin";
+import shebang from "rollup-plugin-preserve-shebang";
 
 /** @type {import("rollup").RollupOptions[]} */
 const rollupOptions = [
   {
+    input: "src/cli.ts",
+    output: [{ file: "bin/runtime-env", format: "commonjs" }],
+    plugins: [
+      del({ targets: "bin/*" }),
+      peerDepsExternal(),
+      optimizeLodashImports(),
+      resolve({ preferBuiltins: true }),
+      commonjs(),
+      versionInjector({ injectInTags: { fileRegexp: /^runtime-env$/ } }),
+      eslint({ throwOnError: true }),
+      typescript({
+        tsconfig: "./tsconfig.json",
+      }),
+      terser(),
+      shebang(),
+      analyze({
+        hideDeps: true,
+        limit: 0,
+        summaryOnly: true,
+      }),
+      visualizer(),
+    ],
+  },
+  {
     input: Object.fromEntries(
       glob
-        .sync(["src/cli.ts", "src/react/**/*.{js,ts,jsx,tsx}"])
+        .sync(["src/*.ts"], { ignore: ["src/cli.ts"] })
         .map((file) => [
-          // This remove `src/` as well as the file extension from each
-          // file, so e.g. src/nested/foo.js becomes nested/foo
           path.relative(
             "src",
             file.slice(0, file.length - path.extname(file).length),
           ),
-          // This expands the relative paths to absolute paths, so e.g.
-          // src/nested/foo becomes /project/src/nested/foo.js
           fileURLToPath(new URL(file, import.meta.url)),
         ]),
     ),
@@ -41,7 +62,7 @@ const rollupOptions = [
       versionInjector(),
       eslint({ throwOnError: true }),
       typescript({
-        tsconfig: "./tsconfig.json",
+        tsconfig: "./tsconfig.build.json",
       }),
       terser(),
       analyze({

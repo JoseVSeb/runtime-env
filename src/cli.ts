@@ -1,7 +1,8 @@
+#!/usr/bin/env node
 import { program } from "commander";
 import { glob } from "glob";
 import { pickBy } from "lodash";
-import { injectEnvInHtml } from "./injectEnvInHtml";
+import { injectEnvInHtml } from "./utils/injectEnvInHtml";
 
 program
   .name("runtime-env")
