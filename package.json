@@ -23,7 +23,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/*.js*"
+    "dist/*"
   ],
   "engines": {
     "node": ">=20"
