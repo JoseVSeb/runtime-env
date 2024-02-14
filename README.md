@@ -7,8 +7,6 @@
 [![npm](https://img.shields.io/npm/l/runtime-env-cli.svg)](https://www.npmjs.org/package/runtime-env-cli)
 [![semantic-release: conventional commit](https://img.shields.io/badge/semantic--release-conventionalcommit-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
-## Overview
-
 `runtime-env-cli` is an NPM package that helps manage environment variables in web applications. It allows environment-agnostic build for frameworks like create-react-app and inject environment variables as `window.env` in html files during server startup.
 
 ## Usage

@@ -1,8 +1,23 @@
 {
   "name": "runtime-env-cli",
   "author": "Jose V Sebastian",
+  "description": "This npm package enables environment agnostic builds for frameworks like create-react-app and inject environment variables as `window.env` in built html files before server startup.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseVSeb/runtime-env.git"
+  },
   "version": "1.0.0-alpha.3",
   "license": "MIT",
+  "keywords": [
+    "cli",
+    "automation",
+    "environment-agnostic",
+    "environment",
+    "agnostic",
+    "build",
+    "runtime",
+    "env"
+  ],
   "scripts": {
     "start": "tsx ./src/cli",
     "build": "rollup -c",
