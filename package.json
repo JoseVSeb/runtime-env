@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/JoseVSeb/runtime-env.git"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "keywords": [
     "cli",
