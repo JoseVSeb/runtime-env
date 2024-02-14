@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  visualizer:
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    environment:
+      # environment variable provided at runtime
+      - REACT_APP_SAMPLE_ENV=injected from docker compose
