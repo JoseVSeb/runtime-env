@@ -16,7 +16,9 @@
     "agnostic",
     "build",
     "runtime",
-    "env"
+    "env",
+    "create-react-app",
+    "cra"
   ],
   "scripts": {
     "start": "tsx ./src/cli",
