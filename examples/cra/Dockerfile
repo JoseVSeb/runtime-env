@@ -14,8 +14,10 @@ RUN pnpm build
 
 FROM base as runner
 WORKDIR /app
+# install runtime-env-cli for production server
 RUN npm i -g serve runtime-env-cli
 COPY --from=builder /workspace/build .
 COPY scripts/start_server.sh .
 RUN chmod +x start_server.sh
+# server startup shell script as entrypoint
 ENTRYPOINT [ "./start_server.sh" ]
