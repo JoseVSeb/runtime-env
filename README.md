@@ -30,7 +30,7 @@
    Yarn:
 
    ```bash
-    pnpm add -D runtime-env-cli
+    yarn add -D runtime-env-cli
    ```
 
 2. Import `runtime-env-cli` in top-level javascript/typescript file for aliasing `process.env` as `windows.env` in development mode.
